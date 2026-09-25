@@ -1,0 +1,345 @@
+/* Reading Challenge Page Styles - Add to globals.css */
+
+.challenge-page {
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.challenge-header {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.challenge-header h1 {
+  font-size: 2.5rem;
+  color: #4e342e;
+  margin-top: 20px;
+  font-family: 'Paytone One', sans-serif;
+}
+
+.challenge-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.current-challenge {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.challenge-stats {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.big-number {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #4e342e;
+  line-height: 1;
+}
+
+.books-read {
+  color: #4e342e;
+}
+
+.books-target {
+  color: #999;
+  font-size: 3rem;
+}
+
+.stats-label {
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.progress-section {
+  margin: 30px 0;
+}
+
+.progress-bar-large {
+  width: 100%;
+  height: 40px;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill-large {
+  height: 100%;
+  background: linear-gradient(90deg, #4e342e 0%, #8b6f47 100%);
+  transition: width 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 15px;
+}
+
+.progress-text {
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.challenge-info {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.challenge-complete {
+  background-color: #e8f5e9;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.challenge-complete i {
+  font-size: 3rem;
+  color: #ffa500;
+  margin-bottom: 10px;
+}
+
+.challenge-complete h3 {
+  font-size: 1.8rem;
+  color: #4e342e;
+  margin-bottom: 10px;
+}
+
+.challenge-progress .remaining-text {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.pace-text {
+  font-size: 1rem;
+  color: #666;
+}
+
+.update-goal-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4e342e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.update-goal-btn:hover {
+  background-color: #333;
+}
+
+.no-challenge {
+  background: white;
+  border-radius: 12px;
+  padding: 60px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.no-challenge i {
+  font-size: 4rem;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.no-challenge h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.goal-form {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.goal-form h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.target-input-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.target-input {
+  width: 120px;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.target-input:focus {
+  outline: none;
+  border-color: #4e342e;
+}
+
+.input-suffix {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.quick-goals {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.quick-goals p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.quick-goal-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.quick-goal-btn {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quick-goal-btn:hover {
+  background-color: #4e342e;
+  color: white;
+  border-color: #4e342e;
+}
+
+.save-goal-btn {
+  padding: 12px 30px;
+  background-color: #4e342e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-goal-btn:hover {
+  background-color: #333;
+}
+
+.save-goal-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.past-challenges {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.past-challenges h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.past-goals-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.past-goal-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.past-goal-year {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4e342e;
+  margin-bottom: 5px;
+}
+
+.past-goal-target {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .current-challenge,
+  .goal-form,
+  .past-challenges,
+  .no-challenge {
+    padding: 22px;
+  }
+
+  .big-number {
+    font-size: 3rem;
+  }
+
+  .books-target {
+    font-size: 2.2rem;
+  }
+
+  .target-input-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .target-input {
+    width: 100%;
+  }
+
+  .quick-goal-buttons,
+  .form-actions {
+    flex-wrap: wrap;
+  }
+
+  .save-goal-btn,
+  .cancel-btn {
+    flex: 1 1 170px;
+  }
+}
+

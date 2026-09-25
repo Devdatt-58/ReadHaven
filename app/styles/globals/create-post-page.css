@@ -1,0 +1,286 @@
+/* Create Post Page Styles */
+
+.create-post-page {
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.create-post-header {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-post-header h1 {
+  font-size: 2rem;
+  color: #4e342e;
+  font-family: 'Paytone One', sans-serif;
+}
+
+.create-post-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.post-form {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-user-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.post-user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.post-user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-placeholder-post {
+  width: 100%;
+  height: 100%;
+  background: var(--avatar-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.post-user-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.post-textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 20px;
+}
+
+.post-textarea:focus {
+  outline: none;
+  border-color: #4e342e;
+}
+
+.selected-book {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.selected-book img {
+  width: 60px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.selected-book-info {
+  flex: 1;
+}
+
+.selected-book-info h4 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.selected-book-info p {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.remove-book-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #f44336;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.remove-book-btn:hover {
+  background-color: #d32f2f;
+}
+
+.book-search-section {
+  margin-bottom: 20px;
+}
+
+.book-search-section h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.book-search-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.book-search-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.book-search-input:focus {
+  outline: none;
+  border-color: #4e342e;
+}
+
+.search-book-btn {
+  padding: 10px 20px;
+  background-color: #4e342e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-book-btn:hover {
+  background-color: #333;
+}
+
+.search-book-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.book-results {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.book-result-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.book-result-item:last-child {
+  border-bottom: none;
+}
+
+.book-result-item:hover {
+  background-color: #f0f0f0;
+}
+
+.book-result-item img {
+  width: 40px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.book-result-info {
+  flex: 1;
+}
+
+.book-result-info h5 {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+.book-result-info p {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.submit-post-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #4e342e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-post-btn:hover {
+  background-color: #333;
+}
+
+.submit-post-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .create-post-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .post-form {
+    padding: 20px;
+  }
+
+  .book-search-form {
+    flex-direction: column;
+  }
+
+  .selected-book {
+    align-items: flex-start;
+    padding-right: 50px;
+  }
+
+  .book-result-item {
+    align-items: flex-start;
+  }
+}
+

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="300" viewBox="0 0 200 300" role="img" aria-label="No cover available">
+  <rect width="200" height="300" fill="#ece4d8"/>
+  <rect x="0" y="0" width="6" height="300" fill="#d8cbb8"/>
+  <g fill="none" stroke="#b0a08a" stroke-width="4">
+    <rect x="66" y="104" width="68" height="80" rx="4"/>
+    <line x1="100" y1="104" x2="100" y2="184"/>
+  </g>
+  <text x="100" y="224" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#8a7a64" text-anchor="middle">No cover</text>
+</svg>

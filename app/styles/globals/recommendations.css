@@ -1,0 +1,245 @@
+.similar-books-section {
+  margin: 32px 0;
+  padding: 0 16px;
+}
+
+.similar-books-section h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-bottom: 16px;
+}
+
+.similar-books-status {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.similar-books-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 12px;
+}
+
+.similar-books-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.similar-books-row::-webkit-scrollbar-thumb {
+  background: #cfc7b8;
+  border-radius: 4px;
+}
+
+.similar-book-card {
+  flex: 0 0 140px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  scroll-snap-align: start;
+}
+
+.similar-book-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.similar-book-cover {
+  width: 100%;
+  height: 200px;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.similar-book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.similar-book-meta {
+  padding: 10px;
+}
+
+.similar-book-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin: 0 0 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.similar-book-author {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.discover-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.discover-page h1 {
+  font-size: 2rem;
+  color: #2c2c2c;
+  margin-bottom: 8px;
+}
+
+.discover-page .discover-sub {
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.discover-search {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.discover-search input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #d6cebd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+}
+
+.discover-search input:focus {
+  outline: none;
+  border-color: #4e342e;
+}
+
+.discover-search button {
+  padding: 12px 24px;
+  background: #4e342e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.discover-search button:hover:not(:disabled) {
+  background: #3a241f;
+}
+
+.discover-search button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.discover-empty {
+  text-align: center;
+  color: #777;
+  padding: 48px 0;
+}
+
+.discover-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.discover-suggestion-pill {
+  background: #efe7d7;
+  border: none;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  color: #4e342e;
+  cursor: pointer;
+}
+
+.discover-suggestion-pill:hover {
+  background: #e2d6bd;
+}
+
+.discover-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.discover-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.discover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.discover-card-cover {
+  width: 100%;
+  height: 260px;
+  background: #f0f0f0;
+}
+
+.discover-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discover-card-meta {
+  padding: 12px;
+}
+
+.discover-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: #2c2c2c;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.discover-card-author {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0 0 6px;
+}
+
+.discover-card-distance {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+@media (max-width: 600px) {
+  .discover-search {
+    flex-direction: column;
+  }
+  .similar-book-card {
+    flex-basis: 120px;
+  }
+  .similar-book-cover {
+    height: 170px;
+  }
+}

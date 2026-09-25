@@ -1,0 +1,12 @@
+$ npm run test:coverage
+
+=============================== Coverage summary ===============================
+Statements   : 88.11% ( 712/808 )
+Branches     : 70.19% ( 457/651 )
+Functions    : 83.72% ( 72/86 )
+Lines        : 91.43% ( 694/759 )
+================================================================================
+
+Test Suites: 19 passed, 19 total
+Tests:       132 passed, 132 total
+Snapshots:   0 total

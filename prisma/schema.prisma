@@ -1,0 +1,240 @@
+// prisma/schema.prisma
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [vector]
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  bio           String?
+  location      String?
+  website       String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts             Account[]
+  sessions             Session[]
+  reviews              Review[]
+  shelves              Shelf[]
+  readingGoals         ReadingGoal[]
+  friendshipsInitiated Friendship[]  @relation("FriendshipInitiator")
+  friendshipsReceived  Friendship[]  @relation("FriendshipReceiver")
+  activities           Activity[]
+
+  posts    Post[]
+  likes    Like[]
+  comments Comment[]
+
+  @@map("users")
+}
+
+model Post {
+  id          String   @id @default(cuid())
+  userId      String
+  content     String   @db.Text
+  bookId      String?
+  bookTitle   String?
+  bookCover   String?
+  bookAuthors String?
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  likes    Like[]
+  comments Comment[]
+
+  @@index([userId, createdAt(sort: Desc)])
+  @@index([createdAt(sort: Desc)])
+  @@map("posts")
+}
+
+model Like {
+  id        String   @id @default(cuid())
+  userId    String
+  postId    String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, postId])
+  @@map("likes")
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  userId    String
+  postId    String
+  content   String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@map("comments")
+}
+
+model Friendship {
+  id        String   @id @default(cuid())
+  userId    String
+  friendId  String
+  status    String // "pending", "accepted", "blocked"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user   User @relation("FriendshipInitiator", fields: [userId], references: [id], onDelete: Cascade)
+  friend User @relation("FriendshipReceiver", fields: [friendId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, friendId])
+  @@index([userId, status])
+  @@index([friendId, status])
+  @@map("friendships")
+}
+
+model Activity {
+  id        String   @id @default(cuid())
+  userId    String
+  type      String // "added_book", "reviewed_book", "completed_challenge"
+  bookId    String?
+  bookTitle String?
+  bookCover String?
+  content   String?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("activities")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  rating    Int
+  content   String?  @db.Text
+  userId    String
+  bookId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt(sort: Desc)])
+  @@index([bookId, createdAt(sort: Desc)])
+  @@map("reviews")
+}
+
+model Book {
+  id          String                      @id @default(cuid())
+  externalId  String                      @unique
+  source      String                      @default("openlibrary")
+  title       String
+  author      String
+  description String                      @default("") @db.Text
+  subjects    String[]
+  year        Int?
+  isbn        String?
+  coverUrl    String?
+  embedding   Unsupported("vector(384)")?
+  createdAt   DateTime                    @default(now())
+  updatedAt   DateTime                    @updatedAt
+
+  @@index([isbn])
+  @@index([author])
+  @@map("books")
+}
+
+model Shelf {
+  id        String      @id @default(cuid())
+  name      String
+  userId    String
+  isDefault Boolean     @default(false)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  books     ShelfBook[]
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, name])
+  @@map("shelves")
+}
+
+model ShelfBook {
+  id        String   @id @default(cuid())
+  shelfId   String
+  bookId    String
+  title     String
+  authors   String[]
+  thumbnail String?
+  addedAt   DateTime @default(now())
+
+  shelf Shelf @relation(fields: [shelfId], references: [id], onDelete: Cascade)
+
+  @@unique([shelfId, bookId])
+  @@map("shelf_books")
+}
+
+model ReadingGoal {
+  id        String   @id @default(cuid())
+  year      Int
+  target    Int
+  userId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, year])
+  @@map("reading_goals")
+}

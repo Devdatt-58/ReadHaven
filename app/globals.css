@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@import "./styles/globals/core-home.css";
+@import "./styles/globals/search-page.css";
+@import "./styles/globals/book-detail-page.css";
+@import "./styles/globals/shelf-page.css";
+@import "./styles/globals/reviews-page.css";
+@import "./styles/globals/reading-challenge-page.css";
+@import "./styles/globals/user-profile-page.css";
+@import "./styles/globals/friends-page.css";
+@import "./styles/globals/statistics-page.css";
+@import "./styles/globals/feed-sidebar.css";
+@import "./styles/globals/create-post-page.css";
+@import "./styles/globals/feed-page.css";
+@import "./styles/globals/awards-page.css";
+@import "./styles/globals/recommendations.css";
+@import "./styles/globals/mobile-shell.css";
