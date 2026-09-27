@@ -75,8 +75,8 @@ export default function FeedPageClient({ posts, currentUserId }: Props) {
     const post = localPosts.find((item) => item.id === postId);
     const wasLiked = post ? post.likes.some((like) => like.userId === currentUserId) : false;
 
-    setPostLikeState(!wasLiked, postId, currentUserId);
-    setLikingPosts((prev) => {
+     setPostLikeState(!wasLiked, postId, currentUserId);
+     setLikingPosts((prev) => {
       const next = new Set(prev);
       next.add(postId);
       return next;
