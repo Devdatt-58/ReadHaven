@@ -13,6 +13,8 @@ async function getUserReviews(userId: string) {
   return reviews;
 }
 
+
+
 export default async function ReviewsPage() {
   const session = await getServerSession(authOptions);
 
