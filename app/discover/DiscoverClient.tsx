@@ -29,7 +29,7 @@ const buildResolveHref = (title: string, author: string) =>
 
 export default function DiscoverClient() {
   const router = useRouter();
-  const searchParams = useSearchParams();
+  const searchParams =  useSearchParams();
   const initialQuery = searchParams.get('q') || '';
 
   const [input, setInput] = useState(initialQuery);

@@ -20,7 +20,7 @@ interface ResolvePageProps {
 const normalize = (value: string) =>
   value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 
-const getBaseUrl = () =>
+const getBaseUrl = ()  =>
   process.env.NEXTAUTH_URL ??
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
 

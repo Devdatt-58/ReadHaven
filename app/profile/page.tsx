@@ -8,7 +8,7 @@ import { ensureDefaultShelves } from '@/lib/shelves';
 async function getUserProfileData(userId: string) {
   await ensureDefaultShelves(userId);
 
-  const [user, shelves, reviews, readingGoals, friendsCount] = await Promise.all([
+   const [user, shelves, reviews, readingGoals, friendsCount] = await Promise.all([
     prisma.user.findUnique({
       where: { id: userId },
       select: {
