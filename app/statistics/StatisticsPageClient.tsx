@@ -120,8 +120,8 @@ export default function StatisticsPageClient({ stats }: Props) {
           </div>
         </div>
 
-        {/* Books by Year */}
-        <div className="stats-section">
+         {/* Books by Year */}
+         <div className="stats-section">
           <h2>Books by Year</h2>
           <div className="year-stats">
             {years.map(year => (
