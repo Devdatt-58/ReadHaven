@@ -24,7 +24,7 @@ const githubProviders =
       ]
     : [];
 
-const googleProviders =
+ const googleProviders =
   googleClientId && googleClientSecret
     ? [
         GoogleProvider({
@@ -34,7 +34,7 @@ const googleProviders =
       ]
     : [];
 
-export const authOptions: NextAuthOptions = {
+ export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     ...githubProviders,
