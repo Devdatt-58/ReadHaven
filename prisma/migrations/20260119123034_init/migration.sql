@@ -44,7 +44,7 @@ CREATE TABLE "sessions" (
 );
 
 -- CreateTable
-CREATE TABLE "verification_tokens" (
+  CREATE TABLE "verification_tokens" (
     "identifier" TEXT NOT NULL,
     "token" TEXT NOT NULL,
     "expires" TIMESTAMP(3) NOT NULL
