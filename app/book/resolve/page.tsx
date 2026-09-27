@@ -41,7 +41,7 @@ async function resolveBookId(title: string, author: string) {
   const normalizedTitle = normalize(title);
   const normalizedAuthor = normalize(author);
 
-  const bestMatch = books.find(
+  const bestMatch =   books.find(
     (book) =>
       normalize(book.title).includes(normalizedTitle) &&
       book.authors.some((bookAuthor) => normalize(bookAuthor).includes(normalizedAuthor))
