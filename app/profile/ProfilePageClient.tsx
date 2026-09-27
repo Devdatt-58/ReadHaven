@@ -59,10 +59,10 @@ export default function ProfilePageClient({ data, session }: Props) {
   const router = useRouter();
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
-    name: data.user?.name || '',
-    bio: data.user?.bio || '',
-    location: data.user?.location || '',
-    website: data.user?.website || '',
+     name: data.user?.name || '',
+     bio: data.user?.bio || '',
+     location: data.user?.location || '',
+     website: data.user?.website || '',
   });
   const [loading, setLoading] = useState(false);
 
