@@ -14,11 +14,11 @@ interface Book {
   ratingsCount: number;
   description: string;
   publishedDate: string;
-}
+ }
 
 interface Props {
   category: string;
-}
+ }
 
 export default function AwardsPageClient({ category }: Props) {
   const [books, setBooks] = useState<Book[]>([]);
