@@ -11,15 +11,19 @@ export interface RecommendedBook {
 }
 
 /**
- * Semantic search over the local book catalogue: embed the free-text query,
- * then rank books by pgvector cosine distance against their stored embeddings.
+ * Semantic search over the local book catalogue:
+ * embed the free-text query, then rank books by pgvector cosine distance
+ * against their stored embeddings.
  */
 export async function recommendForQuery(
   query: string,
   limit = 5
 ): Promise<RecommendedBook[]> {
   const trimmed = query.trim();
-  if (!trimmed) return [];
+
+  if (!trimmed) {
+    return [];
+  }
 
   const vector = await embed(trimmed);
   const literal = toVectorLiteral(vector);
@@ -41,5 +45,6 @@ export async function recommendForQuery(
     literal,
     limit
   );
+
   return rows;
 }
