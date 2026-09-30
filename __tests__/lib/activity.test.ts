@@ -1,3 +1,4 @@
+
 jest.mock('@/lib/prisma', () => ({
   prisma: { activity: { create: jest.fn() } },
 }));
