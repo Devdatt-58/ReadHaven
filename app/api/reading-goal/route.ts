@@ -11,6 +11,9 @@ function getCurrentYear() {
   return new Date().getFullYear();
 }
 
+
+
+
 function parseIntegerInput(value: unknown) {
   if (typeof value === 'number' && Number.isFinite(value)) {
     return Math.trunc(value);
